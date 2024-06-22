@@ -1,6 +1,7 @@
 const { PeerServer } = require("peer");
+const { PORT } = require("./config/server.config");
 
 const peerServer = PeerServer({
-  port: 9000,
+  port: PORT,
   path: "/video-chat",
 });
