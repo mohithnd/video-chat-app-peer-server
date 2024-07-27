@@ -1,5 +1,6 @@
-require("dotenv").config();
+process.loadEnvFile();
 
 module.exports = {
-  PORT: process.env.PORT || 9000,
+  PORT: process.env.PORT,
+  PATH_PARAM: process.env.PATH_PARAM,
 };

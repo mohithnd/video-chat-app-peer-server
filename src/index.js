@@ -1,7 +1,14 @@
 const { PeerServer } = require("peer");
-const { PORT } = require("./config/server.config");
+const { PORT, PATH_PARAM } = require("./config/server.config");
 
-const peerServer = PeerServer({
-  port: PORT,
-  path: "/video-chat",
-});
+PeerServer(
+  {
+    port: PORT,
+    path: PATH_PARAM,
+  },
+  () => {
+    console.log(
+      `Peer Server Is Running On: http://localhost:${PORT}${PATH_PARAM}`
+    );
+  }
+);
